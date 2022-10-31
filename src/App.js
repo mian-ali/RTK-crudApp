@@ -1,10 +1,14 @@
 import './App.css';
 
-import { useGetAllPostQuery, useGetPostbyIdQuery } from './services/postingApi';
+import {
+  useGetAllPostQuery,
+  useGetPostbyIdQuery,
+  useGetPostByLimitQuery,
+} from './services/postingApi';
 
 function App() {
   // const res = useGetAllPostQuery();
-  const res = useGetPostbyIdQuery(1);
+  const res = useGetPostByLimitQuery(10);
   console.log(res);
 
   if (res.isLoading) return <div>loading...</div>;
