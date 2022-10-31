@@ -15,7 +15,16 @@ export const postingApi = createApi({
         method: 'GET',
       }),
     }),
+
+    getPostbyId: builder.query({
+      query: (id) => ({
+        url: `posts/${id}`,
+        method: 'GET',
+      }),
+    }),
+
+    
   }),
 });
 
-export const { useGetAllPostQuery } = postingApi;
+export const { useGetAllPostQuery, useGetPostbyIdQuery } = postingApi;
